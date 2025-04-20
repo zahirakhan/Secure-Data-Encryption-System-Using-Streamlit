@@ -1,8 +1,9 @@
 import streamlit as st
 import hashlib
 from cryptography.fernet import Fernet
+from key_handler import load_or_create_key
 
-KEY = Fernet.generate_key()
+KEY = load_or_create_key() 
 cipher = Fernet(KEY)
 
 if "stored_data" not in st.session_state:
