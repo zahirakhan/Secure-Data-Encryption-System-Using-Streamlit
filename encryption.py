@@ -75,12 +75,11 @@ def login_page():
                 st.session_state.logged_in = True
                 st.session_state.current_user = username
                 st.session_state.failed_attempts = 0
-                st.experimental_rerun()
+                st.info("🎉 Login successful! Please use the sidebar to navigate.")
             else:
                 st.error("❌ Incorrect password.")
         else:
             st.error("❌ Username not found. Please sign up.")
-
 
 def store_data_page():
     st.subheader("📂 Store Data")
